@@ -1,0 +1,21 @@
+.navigation{
+   /* background-color: rgba(71, 71, 71, 0.457); */
+   /* padding: 20px 15px; */
+}
+
+.list {
+   display: flex;
+   gap: 20px;
+}
+
+.link {
+   font-size: 22px;
+   list-style-type: none;
+   transition: all 250ms;
+}
+.link:hover {
+   text-decoration: underline;
+}
+.active {
+   color: aquamarine;
+}
