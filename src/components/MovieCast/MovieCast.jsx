@@ -1,80 +1,45 @@
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { fetchCastMovie } from '../../services/movies-api';
+
+import PropTypes from 'prop-types';
+import { useOutletContext } from 'react-router-dom';
 import css from './MovieCast.module.css';
 
+const MovieCast = () => {
+  const { cast } = useOutletContext();
 
-const MovieCast = ({ setLoading, setError }) => {
-  const [cast, setCast] = useState(null);
-  const { movieId } = useParams(); // movieId
-
-  // console.log('params from  Cast', params);
-
-  useEffect(() => {
-    setError(false);
-
-    const getCastInfo = async () => {
-      try {
-        setLoading(true);
-        const { data } = await fetchCastMovie(movieId);
-        setCast(data.cast);
-      } catch (err) {
-        console.log(err);
-        setError(err.message);
-
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    getCastInfo();
-  }, [movieId]);
-
-  //   console.log(cast);
+  if (!cast || cast.length === 0) {
+    return <p>No cast information available.</p>;
+  }
 
   return (
-    <>
-  
-      {Array.isArray(cast) && cast.length === 0 && (
-        <p>We dont have any information</p>
-      )}
-
-      {/* {loading && <Loader />} */}
-
-      {Array.isArray(cast) && (
-        <ul className={css.actorList}>
-          {cast.map(actor => {
-            return (
-              <li key={actor.id} className={css.actorItem}>
-                {actor.profile_path !== null ? (
-                  <div className={css.actorPhoto}>
-                    <img
-                      src={`https://image.tmdb.org/t/p/w200/${actor.profile_path}`}
-                      alt={actor.name}
-                      className={css.actorImg}
-                    />
-                  </div>
-                ) : (
-                  <div className={css.actorPhoto}>
-                    <img
-                      src={`https://dummyimage.com/400x600/cdcdcd/000.jpg&amp;text=No+poster`}
-                      alt=""
-                      className={css.actorImg}
-                    />
-                  </div>
-                )}
-
-                <div className={css.actorInfo}>
-                  <p>{actor.name}</p>
-                  <p>Character: {actor.character}</p>
-                </div>
-              </li>
-            );
-          })}
-        </ul>
-      )}
-    </>
+    <div className={css.castList}>
+      
+      <ul className={css.castList}>
+        {cast.map((actor) => (
+            <li key={actor.id} className={css.castItem}>
+                <img
+              src={`https://image.tmdb.org/t/p/w200${actor.profile_path}`}
+              alt={actor.name}
+              className={css.actorImage}
+               />
+               <p className={css.actorInfo}>
+               {actor.name}
+                </p>
+                <p className={css.actorInfo}> Character:{actor.character}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
+};
+
+MovieCast.propTypes = {
+  cast: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      character: PropTypes.string.isRequired,
+    })
+  ),
 };
 
 export default MovieCast;

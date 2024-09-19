@@ -1,9 +1,12 @@
-
-.item:not(:last-child){
-   margin-bottom: 20px;
+.reviewList{
+    list-style: circle;
 }
-.title{
-   font-size: 24px;
-   font-weight: 500;
-   margin-bottom: 15px;
+.author{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.content{
+    font-size: 16px;
+    margin-bottom: 10px;
 }

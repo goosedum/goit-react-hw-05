@@ -1,0 +1,64 @@
+.buttonWrapper{
+    display: flex;
+    justify-content: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    align-items: center;
+    gap: 10px;
+    padding-left: 20px;
+
+}
+
+.button{
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #000;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.buttonIcon {
+    margin-right: 10px;
+    width: 32px;
+    height: 32px;
+
+}
+
+.movieImage{
+    width: 300px;
+    height: 400px;
+}
+
+.movieDetailsWrapper{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px;
+    padding-right: 20px;
+    margin-bottom: 20px;
+    gap: 10px;
+    border-bottom: 1px solid #000;
+}
+
+.movieInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.additionalInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    border-bottom: 1px solid #000;
+    margin-bottom: 20px;
+}
+.additionalInfoList{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
