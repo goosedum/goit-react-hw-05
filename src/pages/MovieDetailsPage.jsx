@@ -14,8 +14,6 @@ const MovieDetailsPage = () => {
   const [reviews, setReviews] = useState([]);
   const navigate = useNavigate();
   const location = useLocation();
-  
-  // Використання useRef для збереження попереднього шляху
   const previousLocation = useRef(location.state?.from || '/movies');
 
   const handleGoBack = () => {
