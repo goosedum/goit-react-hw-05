@@ -3,8 +3,8 @@ import axios from 'axios';
 import MovieList from '../components/MovieList/MovieList';
 import css from './HomePage.module.css';
 
-const API_KEY = '3d038329c18432526df90308185ea4bc';
-const ACCESS_TOKEN = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzZDAzODMyOWMxODQzMjUyNmRmOTAzMDgxODVlYTRiYyIsIm5iZiI6MTcyMzk5NTY0Ni43NDY0OTQsInN1YiI6IjY2YzIxMGRlMThlNjYyMmFkY2QzNDVlYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.nCZe9VjKyub-4CEK_TECHdsfUCTV9J81gkkxCY-RarA';
+const API_KEY = '5f3252bb16854277a60c3e02fb4a4f15';
+const ACCESS_TOKEN = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1ZjMyNTJiYjE2ODU0Mjc3YTYwYzNlMDJmYjRhNGYxNSIsIm5iZiI6MTcyNjk1MTU4Ny42OTkzNDksInN1YiI6IjY2ZWYyY2UxNWVlNjFmYmI3MzhkNTA5ZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.d1UWxFLxVCIdS_ToA7LY1PLKtIEI8GxD5FAcZWT1gDM';
 const TRENDING_MOVIES_URL = 'https://api.themoviedb.org/3/trending/movie/day';
 
 const HomePage = () => {
