@@ -93,7 +93,7 @@ const MovieDetailsPage = () => {
         />
         <div className={css.movieInfo}>
           <h2>{movie.title}</h2>
-          <p>User Score:({movie.vote_average} * 10)%</p>
+          <p>User Score:{movie.vote_average}%</p>
           <h2>Overview</h2>
           <p>{movie.overview}</p>
           <h2>Genres</h2>
